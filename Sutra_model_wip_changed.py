@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-states = pd.read_csv(r'D:\HackOn-main\HackOn-main\state_population.csv')#getting the population file
+states = pd.read_csv(r'state_population.csv')#getting the population file
 states.columns
 Pop_list = []
 State_list = []
@@ -79,7 +79,7 @@ def SUTRA(P, T0, Rt0, D0):
 dict1={} # dictionary containing new infection per state
 for i in range(len(Pop_list)):
     Pop = Pop_list[i][0]
-    pathname1 = 'D:\HackOn-main\HackOn-main\States' #change this path to the path containing all the state files, 
+    pathname1 = '.\States' #change this path to the path containing all the state files, 
     #note that all the files must be in the smae order as the first column of pop file
     def foo(path):
         var = os.listdir(path)[i]

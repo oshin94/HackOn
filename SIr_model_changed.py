@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 
-states = pd.read_csv(r'D:\HackOn-main\HackOn-main\state_population.csv')#getting the population file
+states = pd.read_csv(r'state_population.csv')#getting the population file
 states.columns
 Pop_list = []
 State_list = []
@@ -48,7 +48,7 @@ def SIR_mod(N,I0,R0):
 dict1={} # dictionary containing new infection per state
 for i in range(len(Pop_list)):
     Pop = Pop_list[i][0]
-    pathname1 = 'D:\HackOn-main\HackOn-main\States' #change this path to the path containing all the state files, 
+    pathname1 = '.\States' #change this path to the path containing all the state files, 
     #note that all the files must be in the smae order as the first column of pop file
     def foo(path):
         var = os.listdir(path)[i]
@@ -67,23 +67,3 @@ for i in range(len(Pop_list)):
     dict1[key_name] = var
 
 print(dict1)
-
-
-
-# Plot the data on three separate curves for S(t), I(t) and R(t)
-# fig = plt.figure(facecolor='w')
-# ax = fig.add_subplot(111, facecolor='#dddddd', axisbelow=True)
-# ax.plot(t, S/19000000, 'b', alpha=0.5, lw=2, label='Susceptible')
-# ax.plot(t, I/19000000, 'r', alpha=0.5, lw=2, label='Infected')
-# ax.plot(t, R/19000000, 'g', alpha=0.5, lw=2, label='Recovered with immunity')
-# ax.set_xlabel('Time /days')
-# ax.set_ylabel('Number (1000s)')
-# ax.set_ylim(0,1.2)
-# ax.yaxis.set_tick_params(length=0)
-# ax.xaxis.set_tick_params(length=0)
-# ax.grid(b=True, which='major', c='w', lw=2, ls='-')
-# legend = ax.legend()
-# legend.get_frame().set_alpha(0.5)
-# for spine in ('top', 'right', 'bottom', 'left'):
-    # ax.spines[spine].set_visible(False)
-# plt.show()
