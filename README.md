@@ -5,3 +5,5 @@ Location data has been sourced from Google Maps and population data from Wikiped
 Data regarding Covid-19 is taken from covid19india.org.
 
 The optimization for the demand and supply has been done using using least cost method
+
+For more details on methodology and implementation, please refer to Oxygen_Allocation.pptx or Oxygen_Allocation.pdf
